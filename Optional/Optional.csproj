@@ -10,9 +10,11 @@
     <Copyright>MandelV</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/MandelV/Optional</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/MandelV/Optional</RepositoryUrl>
+    <RepositoryUrl>https://github.com/MandelV/Optional.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>c#;Optional</PackageTags>
+    <PackageTags>c#;Optional;CSharp</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NeutralLanguage>C#</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
