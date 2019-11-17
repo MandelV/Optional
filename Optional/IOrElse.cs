@@ -9,7 +9,7 @@ namespace Optional
         /// </summary>
         /// <param name="action"></param>
         void OrElse(Action action);
-        
+
         /// <summary>
         /// if value is present return the value otherwise return other
         /// </summary>
@@ -23,7 +23,7 @@ namespace Optional
         /// <param name="other"></param>
         /// <returns></returns>
         T OrElseGet(Func<T> other);
-        
+
         /// <summary>
         /// if value is present return it, otherwise throw an exception
         /// </summary>

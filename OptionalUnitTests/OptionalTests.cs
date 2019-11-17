@@ -5,7 +5,7 @@ namespace OptionalUnitTests
 {
     public class OptionalTests
     {
-        
+
         [SetUp]
         public void Setup()
         {
@@ -15,7 +15,7 @@ namespace OptionalUnitTests
         public void TestIfPresent1()
         {
             Optional<string> test = Optional<string>.Of("test");
-            
+
             test.IfPresent(val => Assert.AreEqual("test", val));
         }
         [Test]
