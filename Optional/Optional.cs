@@ -15,25 +15,25 @@ namespace Optional
         /// 
         /// </summary>
         public bool IsPresent { get; private set; } = false;
-        
+        private T value;
         /// <summary>
         /// 
         /// </summary>
-        public T Value
-        {
-            get {
+        public T Value 
+        { 
+            get
+            {
                 if (!IsPresent) throw new OptionalValueException();
 
-                return Value;
+                return value;
             }
-            private set => Value = value;
+            private set => this.value = value;
         }
-        
         /// <summary>
         /// 
         /// </summary>
         /// <param name="value"></param>
-        public Optional(T value)
+        private Optional(T value)
         {
             Value = value;
             IsPresent = true;
@@ -42,8 +42,22 @@ namespace Optional
         /// <summary>
         /// 
         /// </summary>
-        public Optional() { }
+        private Optional() { }
 
+        public static implicit operator Optional<T>(T value) => Of(value);
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static Optional<T> Of(T value) => new Optional<T>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static Optional<T> Empty() => new Optional<T>();
 
         public IOrElse<T> IfPresent(Action consumer)
         {
@@ -86,24 +100,5 @@ namespace Optional
 
             throw exception;
         }
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    public static class Optional
-    {
-        /// <summary>
-        ///
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static Optional<T> Of<T>(T value) => new Optional<T>(value);
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public static Optional<object> Empty() => new Optional<object>();
     }
 }
