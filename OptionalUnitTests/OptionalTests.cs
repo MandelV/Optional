@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using Optional;
-using System;
 
 namespace OptionalUnitTests
 {
@@ -27,6 +26,13 @@ namespace OptionalUnitTests
             test.IfPresent(() => Assert.Pass("IfPresent execute the callback"));
 
             Assert.Fail("IsPresent didnt executed the callback");
+        }
+        [Test]
+        public void TestIfPresent3()
+        {
+            Optional<string> test = Optional<string>.Empty();
+
+            test.IfPresent(() => Assert.Fail()).OrElse(() => Assert.Pass());
         }
     }
 }

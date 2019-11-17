@@ -1,7 +1,5 @@
 ﻿using Optional.Exceptions;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Optional
 {
@@ -9,7 +7,7 @@ namespace Optional
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Optional<T> : IIfPresent<T>, IOrElse<T>
+    public class Optional<T> : IIfPresent<T>, IOrElse<T>, IDisposable where T : class
     {
         /// <summary>
         /// 
@@ -99,6 +97,31 @@ namespace Optional
             if (IsPresent) return Value;
 
             throw exception;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Dispose()
+        {
+            Disposing();
+            GC.SuppressFinalize(this);
+        }
+        ~Optional()
+        {
+            Disposing();
+        }
+
+        private void Disposing()
+        {
+            var disposedValue = Value as IDisposable;
+            if (disposedValue != null)
+            {
+                disposedValue.Dispose();
+                IsPresent = false;
+            }
+
+            
         }
     }
 }
