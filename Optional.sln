@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optional", "Optional.csproj", "{C8D6B405-6789-4222-B8A2-BAA9B4F66236}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optional", ".\Optional\Optional.csproj", "{C8D6B405-6789-4222-B8A2-BAA9B4F66236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionalUnitTests", "..\OptionalUnitTests\OptionalUnitTests.csproj", "{C6591074-28B7-4306-95F4-CEBF98AA54FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionalUnitTests", ".\OptionalUnitTests\OptionalUnitTests.csproj", "{C6591074-28B7-4306-95F4-CEBF98AA54FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
